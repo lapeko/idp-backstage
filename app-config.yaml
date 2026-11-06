@@ -217,7 +217,7 @@ catalog:
     #     - allow: [User, Group]
 
     - type: url
-      target: https://github.com/lapeko/idp-backstage-catalog/blob/main/org/catalog-info.yaml
+      target: https://github.com/lapeko/idp-backstage-catalog/blob/main/catalog-info.yaml
       rules:
         - allow: [Location, Group, User]
 
