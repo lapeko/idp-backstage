@@ -69,4 +69,7 @@ backend.add(import('@backstage/plugin-signals-backend'));
 // mcp actions plugin
 backend.add(import('@backstage/plugin-mcp-actions-backend'));
 
+// user defined plugins
+backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
+
 backend.start();
