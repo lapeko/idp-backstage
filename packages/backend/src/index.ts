@@ -70,8 +70,11 @@ backend.add(import('@backstage/plugin-signals-backend'));
 backend.add(import('@backstage/plugin-mcp-actions-backend'));
 
 // user defined plugins
-// backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 
+// github catalog provider
+backend.add(import('@backstage/plugin-catalog-backend-module-github'));
+
+// authentication github provider
 import { createBackendModule } from '@backstage/backend-plugin-api';
 import { githubAuthenticator } from '@backstage/plugin-auth-backend-module-github-provider';
 import {

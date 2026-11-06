@@ -186,26 +186,40 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, User, Group]
+  providers:
+      github:
+        myDiscoveryProvider:
+          organization: 'lapeko'
+          catalogPath: '/catalog-info.yaml'
+          filters:
+            branch: 'main'
+            repository: '.*'
+          schedule:
+            frequency: { minutes: 15 }
+            timeout: { minutes: 3 }
+            initialDelay: { seconds: 15 }
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
-    - type: file
-      target: ../../examples/entities.yaml
+    # - type: file
+    #   target: ../../examples/entities.yaml
 
-    # Local example template
-    - type: file
-      target: ../../examples/template/template.yaml
-      rules:
-        - allow: [Template]
+    # # Local example template
+    # - type: file
+    #   target: ../../examples/template/template.yaml
+    #   rules:
+    #     - allow: [Template]
 
-    # Local example organizational data
-    - type: file
-      target: ../../examples/org.yaml
-      rules:
-        - allow: [User, Group]
+    # # Local example organizational data
+    # - type: file
+    #   target: ../../examples/org.yaml
+    #   rules:
+    #     - allow: [User, Group]
 
     - type: url
-      target: https://raw.githubusercontent.com/lapeko/idp-backstage-catalog/main/org/catalog-info.yaml
+      target: https://github.com/lapeko/idp-backstage-catalog/blob/main/org/catalog-info.yaml
+      rules:
+        - allow: [Location, Group, User]
 
     ## Uncomment these lines to add more example data
     # - type: url
