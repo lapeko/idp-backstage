@@ -11,15 +11,12 @@ const signInPage = SignInPageBlueprint.make({
                 {...props}
                 title='Select a sign-in method'
                 align='center'
-                providers={[
-                    'guest',
-                    {
-                        id: 'github-auth-provider',
-                        title: 'GitHub',
-                        message: 'Sign in using GitHub',
-                        apiRef: githubAuthApiRef,
-                    }
-                ]}
+                provider={{
+                    id: 'github-auth-provider',
+                    title: 'GitHub',
+                    message: 'Sign in using GitHub',
+                    apiRef: githubAuthApiRef,
+                }}
             />
         ),
     },
