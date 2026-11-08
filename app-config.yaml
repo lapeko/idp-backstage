@@ -68,11 +68,11 @@ app:
               row: 2
               width: 4
               height: 4
-            - component: HomePageRandomJoke
-              column: 8
-              row: 2
-              width: 4
-              height: 4
+            # - component: HomePageRandomJoke
+            #   column: 8
+            #   row: 2
+            #   width: 4
+            #   height: 4
             - component: HomePageToolkit
               column: 4
               row: 6
